@@ -19,7 +19,6 @@ import tn.esprit.spring.config.LoginFilter;
 @EnableAutoConfiguration
 public class TimesheetApplication {
 	// a testtaab
-
 	public static void main(String[] args) {
 
 		SpringApplication.run(TimesheetApplication.class, args);
