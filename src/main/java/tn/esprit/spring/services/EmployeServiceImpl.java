@@ -261,15 +261,8 @@ public class EmployeServiceImpl implements IEmployeService {
 		l.info("fin de  la methode  deleteAllContratJPQL");
 	}
 
-	public float getSalaireByEmployeIdJPQL(int employeId) {
-
-		l.info("lancer la methode getSalaireByEmployeIdJPQL");
-		l.debug("je vais récupérer la salaire du employe by id");
-		float a = employeRepository.getSalaireByEmployeIdJPQL(employeId);
-		l.debug("je viens de récupérer la salaire du employe by id");
-		l.info("fin de  la methode  getSalaireByEmployeIdJPQL");
-		return a;
-
+	public Optional<Float> getSalaireByEmployeIdJPQL(int employeId) {
+		return employeRepository.getSalaireByEmployeIdJPQL(employeId);
 	}
 
 	public Double getSalaireMoyenByDepartementId(int departementId) {
