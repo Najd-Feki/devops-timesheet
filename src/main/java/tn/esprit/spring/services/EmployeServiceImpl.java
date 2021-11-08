@@ -265,7 +265,7 @@ public class EmployeServiceImpl implements IEmployeService {
 
 		l.info("lancer la methode getSalaireByEmployeIdJPQL");
 		l.debug("je vais récupérer la salaire du employe by id");
-		return a = employeRepository.getSalaireByEmployeIdJPQL(employeId);
+		return  employeRepository.getSalaireByEmployeIdJPQL(employeId);
 	
 
 	}
