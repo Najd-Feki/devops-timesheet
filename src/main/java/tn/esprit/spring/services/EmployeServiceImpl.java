@@ -251,10 +251,10 @@ public class EmployeServiceImpl implements IEmployeService {
 	public Double getSalaireMoyenByDepartementId(int departementId) {
 		l.info("lancer la methode getSalaireMoyenByDepartementId");
 		l.debug("je vais récupérer la salaire moyene by departement");
-		Double a = employeRepository.getSalaireMoyenByDepartementId(departementId);
+		Double avgSalary = employeRepository.getSalaireMoyenByDepartementId(departementId);
 		l.debug("je viens de récupérer la salaire moyene by departement");
 		l.info("fin de  la methode  getSalaireMoyenByDepartementId");
-		return a;
+		return avgSalary;
 	
 	}
 	
