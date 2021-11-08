@@ -57,7 +57,7 @@ public class TimesheetServiceImpl implements ITimesheetService {
 		timesheet.setTimesheetPK(timesheetPK);
 		timesheet.setValide(false);
 
-		l.debug("je veux faire le save de la nouvelle timesheet ");
+		l.debug("enregistrement de la nouvelle timesheet ");
 		timesheetRepository.save(timesheet);
 		l.debug("je viens de finir l'ajout d'une nouvelle timesheet");
 		l.info("fin de  la methode ajouterTimesheet");
