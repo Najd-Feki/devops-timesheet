@@ -241,10 +241,10 @@ public class EmployeServiceImpl implements IEmployeService {
 	public float getSalaireByEmployeIdJPQL(int employeId) {
 		l.info("lancer la methode getSalaireByEmployeIdJPQL");
 		l.debug("je vais récupérer la salaire du employe by id");
-		float a =  employeRepository.getSalaireByEmployeIdJPQL(employeId);
+		float salary =  employeRepository.getSalaireByEmployeIdJPQL(employeId);
 		l.debug("je viens de récupérer la salaire du employe by id");
 		l.info("fin de  la methode  getSalaireByEmployeIdJPQL");
-		return a;
+		return salary;
 		
 	}
 
