@@ -50,7 +50,7 @@ class TimesheetApplicationTests {
 			l.info(dep.getName());
 		}
 		employeControl.mettreAjourEmailByEmployeIdJPQL("a@gmail.com", 1);
-		// employeControl.deleteAllContratJPQL();
+		employeControl.deleteAllContratJPQL();
 		l.info(employeControl.getSalaireByEmployeIdJPQL(1));
 		l.info(employeControl.getSalaireMoyenByDepartementId(1));
 
