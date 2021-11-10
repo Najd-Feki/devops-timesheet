@@ -57,15 +57,28 @@ pipeline {
             }
         }
         stage('Running docker compose') {
+
             steps {
                 bat"docker-compose up"
             }
+            steps {
+                try {
+                    timeout(time: 5, unit: 'MINUTES') {
+                        bat"docker-compose up"
+                        }
+                    }
+               catch (Exception e) {
+                    echo "Time is up"
+                    }
+               }
         }
-        //stage('Cleaning up') {
-        //    steps {
-        //        bat "docker rmi $registry:$BUILD_NUMBER"
-        //   }
-        //}
+        stage('Cleaning up') {
+            steps {
+                bat"docker-compose up"
+                bat "docker rm --force devops "
+                bat "docker rmi $registry:$BUILD_NUMBER"
+           }
+        }
     }
     post{
             always{
