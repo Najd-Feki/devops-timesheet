@@ -72,13 +72,14 @@ pipeline {
         }
         stage('Cleaning up') {
             steps {
-                bat "docker-compose down && docker rm -f $(docker ps -a -q) && docker volume rm $(docker volume ls -q) "
-              //  bat "docker rm -f $(docker ps -a -q)"
-              //  bat "docker volume rm $(docker volume ls -q)"
-             //   bat "docker rmi $registry:$BUILD_NUMBER"
-           }
+                script {
+                    bat "docker-compose down "
+                    bat "docker rm -f $(docker ps -a -q)"
+                    bat "docker volume rm $(docker volume ls -q)"
+               //   bat "docker rmi $registry:$BUILD_NUMBER"}
+                }
+            }
         }
-    }
     post{
             always{
             cleanWs()
