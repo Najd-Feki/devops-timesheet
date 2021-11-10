@@ -5,7 +5,7 @@ services:
   myapp-mysql:
     image: mysql:5.6
     environment:
-      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=20020059
       - MYSQL_DATABASE=timesheet-spring
     ports:
       - 3307:3306
