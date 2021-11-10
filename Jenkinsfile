@@ -57,10 +57,6 @@ pipeline {
             }
         }
         stage('Running docker compose') {
-
-            steps {
-                bat"docker-compose up"
-            }
             steps {
                 try {
                     timeout(time: 5, unit: 'MINUTES') {
