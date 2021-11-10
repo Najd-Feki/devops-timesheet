@@ -72,7 +72,7 @@ pipeline {
         }
         stage('Cleaning up') {
             steps {
-                    bat "docker-compose down"
+                    bat 'docker-compose down'
                     bat 'docker rm -f $(docker ps -a -q)'
                     bat 'docker volume rm $(docker volume ls -q)'
                //   bat "docker rmi $registry:$BUILD_NUMBER"}
