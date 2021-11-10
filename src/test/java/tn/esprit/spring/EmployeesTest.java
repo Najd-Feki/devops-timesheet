@@ -96,7 +96,7 @@ public class EmployeesTest {
     void addOrUpdateEmploye(){
         Employe employe =new Employe("feki", "najd", "fekinajd@email.com","123ingenieur", true, Role.INGENIEUR);
         Employe admin =new Employe("feki2", "najd2", "fekinajd2@email.com","123admin", true, Role.ADMINISTRATEUR);
-        l.info("Add Or Update Test Started");
+        l.info("Add or Update Test Started");
         employeeService.addOrUpdateEmploye(employe);
         employeeService.addOrUpdateEmploye(admin);
         admin.setPassword("newPassword");
