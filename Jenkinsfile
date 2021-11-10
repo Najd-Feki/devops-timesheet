@@ -73,10 +73,8 @@ pipeline {
         stage('Cleaning up') {
             steps {
                     bat 'docker-compose down'
-                    bat 'docker rm -f $(docker ps --all --quiet)'
-                    bat 'docker volume rm $(docker volume ls -q)'
                     bat "docker image prune --all"
-               }    
+               }
             }        
         }
         post{
