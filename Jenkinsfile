@@ -73,7 +73,7 @@ pipeline {
         stage('Cleaning up') {
             steps {
                     bat 'docker-compose down'
-                    bat "docker image prune --all"
+                    bat "docker image prune --all --force"
                }
             }        
         }
