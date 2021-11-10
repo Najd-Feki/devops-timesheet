@@ -43,7 +43,7 @@ public class TimesheetServiceImpl implements ITimesheetService {
 		return mission.getId();
 	}
 
-	public void ajouterTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin) {
+	public Timesheet ajouterTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin) {
 
 		l.info("lancer la methode ajouterTimesheet");
 
@@ -61,7 +61,7 @@ public class TimesheetServiceImpl implements ITimesheetService {
 		timesheetRepository.save(timesheet);
 		l.debug("je viens de finir l'ajout d'une nouvelle timesheet");
 		l.info("fin de  la methode ajouterTimesheet");
-
+		return timesheet;
 	}
 
 	public void affecterMissionADepartement(int missionId, int depId) {
