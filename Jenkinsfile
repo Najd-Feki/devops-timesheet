@@ -58,15 +58,17 @@ pipeline {
         }
         stage('Running docker compose') {
             steps {
-                try {
-                    timeout(time: 5, unit: 'MINUTES') {
-                        bat"docker-compose up"
+                script {
+                    try {
+                        timeout(time: 5, unit: 'MINUTES') {
+                            bat"docker-compose up"
+                            }
                         }
+                    catch (Exception e) {
+                        echo "Time is up"
+                        }
+                       }
                     }
-               catch (Exception e) {
-                    echo "Time is up"
-                    }
-               }
         }
         stage('Cleaning up') {
             steps {
