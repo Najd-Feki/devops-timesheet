@@ -74,7 +74,7 @@ pipeline {
         }
         stage('Cleaning up') {
             steps {
-                bat"docker-compose up"
+                bat "docker-compose up"
                 bat "docker rm --force devops "
                 bat "docker rmi $registry:$BUILD_NUMBER"
            }
