@@ -30,10 +30,9 @@ pipeline {
                 bat "mvn sonar:sonar -f devops-timesheet"
             }
         }
-        //send email
         stage('Email'){
             steps{
-                 emailext body: 'You just launched a job !',  to: 'fekinajd@gmail.com', subject: 'From Jenkins'
+                 emailext body: 'A job was just launched ! check it out at http://localhost:8080/job/devops/$BUILD_NUMBER ',  to: 'fekinajd@gmail.com', subject: 'Jenkins Job Status'
         
             }
         }
