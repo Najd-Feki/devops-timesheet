@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Email'){
             steps{
-                  emailext body: 'You just launched a job !',  to: 'fekinajd@gmail.com', subject: 'From Jenkins'
+                  emailext body: 'You just launched a job !',  to: 'najd.feki@esprit.tn', subject: 'From Jenkins'
             }
         }
          stage('Building our image') {
