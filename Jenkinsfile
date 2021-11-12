@@ -32,12 +32,11 @@ pipeline {
         }
         stage('Email'){
             steps{
-                 emailext body: 'A job was just launched ! check it out at http://localhost:8080/job/devops/$BUILD_NUMBER ',  to: 'fekinajd@gmail.com', subject: 'Jenkins Job Status'
+                 emailext body: 'A job was just launched !',  to: 'fekinajd@gmail.com', subject: 'Jenkins Job Status'
         
             }
         }
          stage('Building our image') {
-            //bat "cd timesheetimen"
             steps{
                 script {
                     dir("C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/devops/devops-timesheet"){
